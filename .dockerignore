@@ -1,0 +1,11 @@
+.git
+__pycache__
+*.pyc
+.env
+.env.*
+!*.example
+*.sqlite
+*.db
+out/
+data/
+node_modules/

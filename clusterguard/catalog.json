@@ -1,0 +1,156 @@
+[
+  {
+    "id": "w1",
+    "track": "inference",
+    "title": "LLM Inference Worker (vLLM / TensorRT-LLM)",
+    "description": "High-throughput, low-latency transformer inference endpoint with continuous batching.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 1,
+      "ram_gib": 1,
+      "nvme_tb": 1,
+      "egress_gbps": 0,
+      "static_ips": 0
+    },
+    "fit_tags": [
+      "gpu",
+      "inference",
+      "low_latency",
+      "ai_workload",
+      "realtime",
+      "deep_learning",
+      "tensorrt",
+      "vllm"
+    ],
+    "compliance_flags": ["soc2_compliant", "non_root_execution"],
+    "cost": 2,
+    "tier": "mission_critical"
+  },
+  {
+    "id": "w2",
+    "track": "database",
+    "title": "Distributed Vector Indexer (Milvus / Qdrant)",
+    "description": "Scalable HNSW vector index partition with distributed shard replication.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 0,
+      "ram_gib": 1,
+      "nvme_tb": 1,
+      "egress_gbps": 1,
+      "static_ips": 0
+    },
+    "fit_tags": [
+      "vector_db",
+      "rag",
+      "high_memory",
+      "nvme_storage",
+      "search",
+      "database",
+      "data_platform"
+    ],
+    "compliance_flags": ["soc2_compliant", "zero_trust_mesh"],
+    "cost": 2,
+    "tier": "data_tier"
+  },
+  {
+    "id": "w3",
+    "track": "rag",
+    "title": "RAG Context Retriever & Dense Embedder",
+    "description": "Asynchronous document chunking, semantic dense embedding generation, and reranking.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 0,
+      "ram_gib": 1,
+      "nvme_tb": 0,
+      "egress_gbps": 1,
+      "static_ips": 0
+    },
+    "fit_tags": [
+      "embedding",
+      "batch",
+      "cpu_bound",
+      "rag",
+      "search",
+      "semantic"
+    ],
+    "compliance_flags": ["soc2_compliant", "non_root_execution", "fips_140_2"],
+    "cost": 2,
+    "tier": "compute_optimized"
+  },
+  {
+    "id": "w4",
+    "track": "ingress",
+    "title": "Zero-Trust API Gateway & Ingress Router",
+    "description": "Edge ingress proxy terminating TLS with mTLS zero-trust peer authentication.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 0,
+      "ram_gib": 0,
+      "nvme_tb": 1,
+      "egress_gbps": 1,
+      "static_ips": 1
+    },
+    "fit_tags": [
+      "gateway",
+      "networking",
+      "ingress",
+      "zero_trust",
+      "low_latency",
+      "edge"
+    ],
+    "compliance_flags": ["zero_trust_mesh", "fips_140_2", "non_root_execution", "public_ingress"],
+    "cost": 2,
+    "tier": "edge_networking"
+  },
+  {
+    "id": "w5",
+    "track": "observability",
+    "title": "Realtime Telemetry & eBPF Security Sensor",
+    "description": "Continuous kernel-level runtime security monitor and network anomaly detector.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 0,
+      "ram_gib": 1,
+      "nvme_tb": 1,
+      "egress_gbps": 0,
+      "static_ips": 0
+    },
+    "fit_tags": [
+      "telemetry",
+      "observability",
+      "ebpf",
+      "streaming",
+      "security",
+      "kernel"
+    ],
+    "compliance_flags": ["soc2_compliant", "non_root_execution"],
+    "cost": 2,
+    "tier": "governance"
+  },
+  {
+    "id": "w6",
+    "track": "training",
+    "title": "Distributed Model Fine-Tuning Worker (LoRA/FSDP)",
+    "description": "Multi-GPU distributed training pod executing parameter-efficient LoRA adapters.",
+    "resources": {
+      "cpu": 1,
+      "gpu_h100": 1,
+      "ram_gib": 1,
+      "nvme_tb": 0,
+      "egress_gbps": 0,
+      "static_ips": 0
+    },
+    "fit_tags": [
+      "training",
+      "gpu",
+      "high_compute",
+      "batch",
+      "fine_tuning",
+      "fsdp",
+      "lora"
+    ],
+    "compliance_flags": ["soc2_compliant", "non_root_execution"],
+    "cost": 2,
+    "tier": "compute_heavy"
+  }
+]
