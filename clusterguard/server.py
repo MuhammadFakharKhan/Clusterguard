@@ -14,8 +14,11 @@ from .llm_client import LLMUnavailable
 
 ROOT = Path(__file__).resolve().parent
 
-# Auto-load local .env file if present (zero-dependency standard library implementation)
+# Avoid silently importing repo-local secrets into the process environment.
+# Live AI is enabled only when the operator explicitly sets the relevant env vars.
 def _load_env_file():
+    if os.getenv('CLUSTERGUARD_LOAD_DOTENV') != '1':
+        return
     env_path = ROOT / '.env'
     if not env_path.is_file():
         env_path = ROOT.parent / '.env'

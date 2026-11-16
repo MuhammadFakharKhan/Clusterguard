@@ -28,7 +28,8 @@ HARD_POLICIES = {
     'zero_trust_mesh',
     'no_public_ingress',
     'fips_140_2',
-    'non_root_execution'
+    'non_root_execution',
+    'vegetarian'
 }
 
 class PlanningError(ValueError): pass
