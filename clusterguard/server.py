@@ -90,6 +90,16 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def do_HEAD(self):
+        p = urlparse(self.path)
+        if p.path == '/healthz':
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+        else:
+            self.send_response(200)
+            self.end_headers()
+
     def do_GET(self):
         p = urlparse(self.path)
         if p.path in STATIC:
